@@ -49,7 +49,7 @@ BigtCoin
 - Han ji young, Hallym Univ. | jyong0719@gmail.com
 - Sin Dong Hyeon, Hallym univ. | akqjq8694@gmail.com
 - Chi Hyon Gyu, Hallym univ. | hyeongyuc96@gmail.com
-- Chon jeong min, Hallym univ. |
+- Chon jeong min, Hallym univ. | c19960101@gmail.com
 
 ---
 
