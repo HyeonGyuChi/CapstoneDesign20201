@@ -33,7 +33,7 @@
 <br>즉 모델학습을 위한 가치있는 데이터를 무한히 생성함으로서 현재 딥러닝학습에서 겪고있는 가장 중요한 과제를 해결하고자 합니다.
 
 
-딥러닝 모델학습을 위해 생성된 가짜 데이터를 통해 기존모델의 정확도가 올라간다면 이는 학습에 있어 유의미한 데이터이며 곧 충분히 가치있는 데이터 일 것 입니다.
+딥러닝 모델학습을 위해 생성된 가짜 데이터가 기존모델의 정확도를 끌어올릴 수 있다면 이는 딥러닝 모델학습에 있어 향상된 성능을 제공할 것입니다. 이는 곧 임의로 만들어진 가짜데이터가 유의미함을 의미하며 학습 데이터확보에 있어 많은 수고를 덜어줄 것입니다. 우리는 딥러닝을 활용해 실제 존재하지 않는 충분히 가치있는 데이터를 생성할 수 있는 
 
 딥러닝 모델 학습을 위한 가짜 데이터의 생성은 다양한 분야에 적용될 수 있지만 의료분야로 축약하여 주제를 잡은 이유는 다음과 같습니다.
 
@@ -48,7 +48,7 @@
 BigtCoin
 - Han ji young, Hallym Univ. | jyong0719@gmail.com
 - Sin Dong Hyeon, Hallym univ. | akqjq8694@gmail.com
-- Chi Hyon Gyu, Hallym univ. | hyeongyuc96@gmail.com
+- Chi Hyeon Gyu, Hallym univ. | hyeongyuc96@gmail.com
 - Chon jeong min, Hallym univ. | c19960101@gmail.com
 
 ---
