@@ -67,7 +67,7 @@ Coach
 |Model|Function|
 |---|---|
 |Model A | Generate Sysntheric Brain Tumour Data |
-|Model B | Classfication Brain Tumour (for prove values of sytheric datas generated from Model A |
+|Model B | Segmentation Brain Tumour (for prove values of sytheric datas generated from Model A |
 
 >Model A에서 생성한 데이터를 통해 기존의 모델 정확도가 향상된다면 그 데이터는 정확도 향상에 기여한 것이므로 가치있는 데이터라 판단합니다.
 
