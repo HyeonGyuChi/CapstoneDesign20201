@@ -41,8 +41,15 @@
 
 ## 4월 21일
 - Unet vs Pix2Pix 구조알아보기
-- Synthric image 관련논문 완벽숙지
+- Synthetic image 관련논문 완벽숙지
 - Brats 데이터전처리 및 ANDI 데이터 전처리
 
 ## 4월 28일
-- 내일.. 모델구축
+- 전체 딥러닝 모델구조 수립
+- Unet Prototype Model 개발
+
+
+<center>
+<img src="./image/meet_0428.jpg" height="300"></img>
+<img src="./image/meet_0421.jpg" height="300" display="inline-block"></img>
+</center>
