@@ -69,9 +69,9 @@ Coach
 |Model A | Generate Sysntheric Brain Tumour Data |
 |Model B | Classfication Brain Tumour (for prove values of sytheric datas generated from Model A |
 
-    Model A에서 생성한 데이터를 통해 기존의 모델 정확도가 향상된다면 그 데이터는 정확도 향상에 기여한 것이므로 가치있는 데이터라 판단합니다.
+>Model A에서 생성한 데이터를 통해 기존의 모델 정확도가 향상된다면 그 데이터는 정확도 향상에 기여한 것이므로 가치있는 데이터라 판단합니다.
 
-    Model A의 가치있는 데이터를 판단하기 위한 척도로서 다음과 같은 실험을 시행합니다.
+>Model A의 가치있는 데이터를 판단하기 위한 척도로서 다음과 같은 실험을 시행합니다.
 
 |Model|Measure|
 |---|---|
@@ -79,9 +79,9 @@ A |실제 데이터만 이용한 Model B Accuracy |
 B | Model A에서 생성한 가짜 데이터만 이용한 Model B Accuracy |
 C | 실제 데이터와 Model A에서 생성한 가짜 데이터를 이용한 Model B Accuracy |
 
-    A < C 일 경우, 가짜 데이터가 기존모델의 정확도를 향상시켰으므로 Model A를 통해 만들어진 가짜 데이터는 가치있는 것이며 즉, 만들고자 하는 Model A가 가치있는 뇌종양 데이터를 생성함
+>A < C 일 경우, 가짜 데이터가 기존모델의 정확도를 향상시켰으므로 Model A를 통해 만들어진 가짜 데이터는 가치있는 것이며 즉, 만들고자 하는 Model A가 가치있는 뇌종양 데이터를 생성함
 
-* 데이터 = (Brain Tumour Image, Label image with brain Tumour segmentation)
+* *데이터 = (Brain Tumour Image, Labeled image with brain Tumour segmentation)*
 
 ## Method
 ### Data
