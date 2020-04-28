@@ -92,12 +92,12 @@ C | 실제 데이터와 Model A에서 생성한 가짜 데이터를 이용한 Mo
     > 정상뇌 MRI 데이터    
 
 
-    <center><img src="./image/ADNI.png"></img></center>
+    <center><img src="./image/ADNI.PNG"></img></center>
 
 - <a href="https://www.med.upenn.edu/sbia/brats2018/data.html">Multimodal Brain Tumor Image Segmentation Benchmark (BRATS) data set</a>
 
     > 뇌종양 MRI 데이터
-    <center><img src="./image/brats.png"></img></center>
+    <center><img src="./image/brats.PNG"></img></center>
 
 ---
 
