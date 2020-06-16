@@ -132,13 +132,13 @@ The Contracting Path는 (3x3)크기로 convolutions을 두 차례씩 반복 하�
 본 실험에서는 240*240 크기의 Abnormal Brain을 넣어 Brain Tumor를 분할하도록, U-net구조의 모델을 Layer별로 수정하여 학습시켰다.
 
 #### Output
+- Real Brain(좌) vs Seg-DNN을 통해 검출한 뇌종양부분 (우)
 <center>
-<img src="./image/real_brain.gif" display="inline-block"></img> 
-<img src="./image/fake_brain.gif" display="inline-block"></img></center>
+<img src="./image/real_brain.gif" display="inline-block"></img>
+<img src="./image/fake_brain.gif" display="inline-block"></img>
+</center>
 
 ---
-
-
 
 ### Tumour-Generator
 - 가짜 뇌종양 라벨 데이터(Syntheric Brain Tumour Label data) 생성모델
@@ -164,7 +164,8 @@ DCGAN의 Discriminator의 구조는 위 사진의 우측 부분과 같으며, Di
 <center><img src="./image/leakyRelu.png"></img></center>
 
 #### Output
--  Tumour Generator을 이용한 Syntheric 가짜 뇌종양 라벨 데이터 생성 과정
+-  Tumour Generator를 이용한 Syntheric 뇌종양 라벨 데이터 생성 과정
+
 <center><img src="./image/dcgan.gif"></img></center>
 
 -----
