@@ -4,7 +4,8 @@
 -----
 
 ## Directory
-- ./Model_A : Synthetic Data를 생성하는 모델
+- ./Data : Data 전처리
+- ./Brain Generator : Synthetic Data를 생성하는 모델
 - ./Model_B : Synthetic Data의 가치를 평가하는 모델
 - ./imges : Image for README
 - <a href="./meet">./meet : 주차별 회의록</a>
@@ -72,26 +73,30 @@ Coach
 
 
 ![간단한모델구조](./image/semi_model.png)
+
 위에서 정의한 3가지 모델을 이용해 다음과 같은 구조로 Seg-DNN의 성능을 향상시키고자 한다. 
 
 ## Method
 ### Data
 
 - 각 모델학습에 사용한 데이터
+    <center>
 
     |Model|학습데이터
     |---|---|---|
-    |Tumour Generator | Label data(Brain Tumour) from Brats 2018
-    |Brain Generator| Abnormal Brain data(Brain Tumour) from Brats 2018
-    |Seg-DNN| Brain Tumour Data Pair from Brats 2018
+    |Tumour Generator | Label data(Brain Tumour) from Brats 2018 |
+    |Brain Generator| Abnormal Brain data(Brain Tumour) from Brats 2018 |
+    |Seg-DNN| Brain Tumour Data Pair from Brats 2018 |
+
+    </center>
 
 - 학습된 모델의 입력 및 출력 데이터
 
     |Model|입력데이터|출력데이터
     |---|---|---|
-    |Tumour Generator | 1*100 Gausian Noise | Syntheric Label data(Brain Tumour)
-    |Brain Generator| Label data(Brain Tumour) | Syntheric Abnormal Brain MRI Data
-    |Seg-DNN| Brain MRI Data | Segmentation Data(Brain Tumour)
+    |Tumour Generator | 1*100 Gausian Noise | Syntheric Label data(Brain Tumour) |
+    |Brain Generator| Label data(Brain Tumour) | Syntheric Abnormal Brain MRI Data |
+    |Seg-DNN| Brain MRI Data | Segmentation Data(Brain Tumour) |
 
 
 - 뇌종양 데이터 - Brats2018 매년 개최되는 
@@ -126,6 +131,11 @@ The Contracting Path는 (3x3)크기로 convolutions을 두 차례씩 반복 하�
 
 본 실험에서는 240*240 크기의 Abnormal Brain을 넣어 Brain Tumor를 분할하도록, U-net구조의 모델을 Layer별로 수정하여 학습시켰다.
 
+#### Output
+<center>
+<img src="./image/real_brain.gif" display="inline-block"></img> 
+<img src="./image/fake_brain.gif" display="inline-block"></img></center>
+
 ---
 
 
@@ -152,6 +162,10 @@ DCGAN의 Discriminator의 구조는 위 사진의 우측 부분과 같으며, Di
 하지만, 본 실험에서는 128X128 크기의 Input이미지를 입력 받기 위해 Layer를 수정하였다. 활성화함수로는 아래 그림에서 확인할 수 있듯이 LeakyReLU를 사용한다. LeakyReLU는 기존 ReLU와 달리 음수영역의 값을 버리지 않고 가져온다.
 
 <center><img src="./image/leakyRelu.png"></img></center>
+
+#### Output
+-  Tumour Generator을 이용한 Syntheric 가짜 뇌종양 라벨 데이터 생성 과정
+<center><img src="./image/dcgan.gif"></img></center>
 
 -----
 

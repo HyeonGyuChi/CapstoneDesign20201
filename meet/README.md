@@ -51,5 +51,36 @@
 
 <center>
 <img src="./image/meet_0428.jpg" height="300"></img>
-<img src="./image/meet_0421.jpg" height="300" display="inline-block"></img>
 </center>
+
+
+## 5월 4일
+- Pix2Pix 구조 기반 Brain Generator 개발
+- Unet 구조 기반 Seg-DNN model 개발
+
+## 5월 9일
+- DCGAN 구조 알아보기
+- Unet 구조 기반 Seg-DNN model 최적화
+<img src="./image/meet_0421.jpg" height="300" display="inline-block"></img>
+
+## 5월 14일
+- DCGAN 구조 기반 Tumor Generator 개발
+- Seg-DNN 최적화 완료
+
+## 5월 21일
+- Tumor Generator 최적화 완료
+- Brain Generator 최적화 완료
+
+
+## 5월 27일
+- Tumor Generator를 이용한 Fake Tumor 생성
+- Brain Generator를 이용한 Fake Brain 생성
+- Data Augmentation을 통한 Seg-DNN 성능 평가
+![meet_0527](./image/meet_0527.jpg)
+## 6월 3일 
+- 다이스 계수, TSNE, PCA 구현
+
+## 6월 10일 
+- 최종 보고서  작성 완료
+
+
