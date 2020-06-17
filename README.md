@@ -1,4 +1,4 @@
-# Synthetic Data Augmentation for Brain Tumour by using Deep Learning
+# Synthetic Data Augmentation for Brain tumor by using Deep Learning
 ## Bigtcoin Team, Hallym University Capstone Design
 
 -----
@@ -16,7 +16,7 @@
 4. [문제해결 : 프로젝트를 해결과정](#Method)
     - [Data : 사용 데이터 셋](#Data)
     - [Seg-DNN : 뇌종양 검출모델](#Seg-DNN)
-    - [Tumour Generator : 가짜 뇌종양 라벨 데이터 생성](#Tumour-Generator)
+    - [Tumor Generator : 가짜 뇌종양 라벨 데이터 생성](#tumor-Generator)
     - [Brain Generator : 가짜 뇌종양 뇌 MRI 데이터 생성](#Brain-Generator)
 5. [결과 : 프로젝트의 결과](#Result)
 5. [기대효과 : 프로젝트를 의의 및 확장성](#Benefit)
@@ -66,9 +66,9 @@ Coach
 
 |Model Name|Function|Reference Model
 |---|---|---|
-|Tumour Generator | Generate Sysntheric Labeled Brain Tumour Data to apply Brain Generator | DCGAN
-|Brain Generator| Generate Sysntheric Adnrmal Brain MRI Data to apply Seg-DNN | PIX2PIX
-|Seg-DNN| Segmentation Brain Tumour (for prove values of sytheric datas generated from Tumour Generator | UNET
+|Tumor Generator | Generate Synthetic Labeled Brain tumor Data to apply Brain Generator | DCGAN
+|Brain Generator| Generate Synthetic Adnormal Brain MRI Data to apply Seg-DNN | PIX2PIX
+|Seg-DNN| Segmentation Brain tumor (for prove values of sytheric datas generated from tumor Generator | UNET
 
 
 ![간단한모델구조](./image/semi_model.png)
@@ -82,18 +82,18 @@ Coach
 
     |Model|학습데이터|
     |---|---|
-    |Tumour Generator | Label data(Brain Tumour) from Brats 2018 |
-    |Brain Generator| Abnormal Brain data(Brain Tumour) from Brats 2018 |
-    |Seg-DNN| Brain Tumour Data Pair from Brats 2018 |
+    |Tumor Generator | Label data(Brain tumor) from Brats 2018 |
+    |Brain Generator| Abnormal Brain data(Brain tumor) from Brats 2018 |
+    |Seg-DNN| Brain tumor Data Pair from Brats 2018 |
 
 
 - 학습된 모델의 입력 및 출력 데이터
 
     |Model|입력데이터|출력데이터
     |---|---|---|
-    |Tumour Generator | 1*100 Gausian Noise | Syntheric Label data(Brain Tumour) |
-    |Brain Generator| Label data(Brain Tumour) | Syntheric Abnormal Brain MRI Data |
-    |Seg-DNN| Brain MRI Data | Segmentation Data(Brain Tumour) |
+    |Tumor Generator | 1*100 Gausian Noise | Synthetic Label data(Brain tumor) |
+    |Brain Generator| Label data(Brain tumor) | Synthetic Abnormal Brain MRI Data |
+    |Seg-DNN| Brain MRI Data | Segmentation Data(Brain tumor) |
 
 
 - <a href='https://www.med.upenn.edu/sbia/brats2018/data.html'>Brats2018</a> - Multimodal Brain Tumor Segmentation Challenge 2018
@@ -102,7 +102,7 @@ Coach
 
     - Label data : 실제 뇌종양 부분에 대한 정보
     - Abnormal Brain data : 뇌종양 MRI 사진
-    - Brain Tumour Data Pair : Abnormal Brain Data + Label data
+    - Brain tumor Data Pair : Abnormal Brain Data + Label data
 
 
 ---
@@ -143,8 +143,8 @@ The Contracting Path는 (3x3)크기로 convolutions을 두 차례씩 반복 하�
 
 ---
 
-### Tumour-Generator
-- 가짜 뇌종양 라벨 데이터(Syntheric Brain Tumour Label data) 생성모델
+### tumor-Generator
+- 가짜 뇌종양 라벨 데이터(Synthetic Brain tumor Label data) 생성모델
 - DCGAN 구조기반
 
 
@@ -153,7 +153,7 @@ The Contracting Path는 (3x3)크기로 convolutions을 두 차례씩 반복 하�
 <center><img src="./image/dcgan_total.png"></img></center>
 <center><img src="./image/dcgan_enc.png"></img></center>
 
-Tumour Generator 모델의 경우 DCGAN을 참고하여 구현하였다.
+Tumor Generator 모델의 경우 DCGAN을 참고하여 구현하였다.
 
 
 DCGAN의 Generator의 구조는 위 사진의 좌측 부분과 같으며, DCGAN 모델은 Random-Noise를 Input으로 넣으면 최종 출력 이미지는 64X64크기로 출력 된다.
@@ -167,14 +167,14 @@ DCGAN의 Discriminator의 구조는 위 사진의 우측 부분과 같으며, Di
 <center><img src="./image/leakyRelu.png"></img></center>
 
 #### Output
--  Tumour Generator를 이용한 Syntheric 뇌종양 라벨 데이터 생성 과정
+-  Tumor Generator를 이용한 Synthetic 뇌종양 라벨 데이터 생성 과정
 
 <center><img src="./image/dcgan.gif" width="200" height="200" display="inline-block"></img></center>
 
 -----
 
 ### Brain-Generator
-- 가짜 뇌종양 MRI 데이터(Syntheric Abnormal Brain MRI Data) 생성모델
+- 가짜 뇌종양 MRI 데이터(Synthetic Abnormal Brain MRI Data) 생성모델
 - PIX2PIX 구조기반
 
 #### Network Structure
@@ -195,7 +195,7 @@ Pix2pix의 Discriminator 기본구조는 Patch-GAN구조이다. L1 Loss를 사�
 즉, Discriminator는 High-Frequency에서 구분하는 것에 주 목적을 둔다. 이미지를 N X N 크기의 Patch로 나누고, 각각의 Patch에 대해서 참/거짓을 판별한 뒤, 참이 많으면 참으로, 거짓이 많으면 거짓으로 분류하는 방법이다. 더 지역적인 특징이 반영되므로, High-frequency에서 구분하는 데 적절하다. Patch Size가 작을수록, 전체 매개변수의 수가 작아지므로, 학습 속도가 빨라진다.
 
 #### Output
--  Brain Generator를 이용한 Syntheric Abnromal Brain 데이터 생성 과정
+-  Brain Generator를 이용한 Synthetic Abnromal Brain 데이터 생성 과정
 
 <center><img src="./image/pix2pix.gif" width="200" height="200" display="inline-block"></img></center>
 
@@ -210,15 +210,15 @@ Pix2pix의 Discriminator 기본구조는 Patch-GAN구조이다. L1 Loss를 사�
 
 총 세 가지 경우를 비교해 봤을 때 Brain Generator를 사용해 만든 Fake data 가 학습에 있어 가장 효과적이였다.
 
-#### Tumour Generator)와 Brain Generator를 통해 생성한 Fake Data와 진짜 데이터 비교
+#### Tumor Generator와 Brain Generator를 통해 생성한 Fake Data와 진짜 데이터 비교
 <center><img src="./image/result1.png" height="500px"></img></center>
 
-TG(Tumour Generator)와 BG(Brain Generator)를 통해 생성한 데이터들이 실제 데이터와 차이가 없음을 확인하기 위해 PCA와 T-sne 분석 방법을 사용했다.   
+TG(Tumor Generator)와 BG(Brain Generator)를 통해 생성한 데이터들이 실제 데이터와 차이가 없음을 확인하기 위해 PCA와 T-sne 분석 방법을 사용했다.   
 
 <center><img src="./image/pca_tsne.png"></img></center>
 PCA와 t-sne는 모두 데이터 차원을 축소하여 주성분을 분석하는 방법으로 실험에서 사용한 240x240 크기의 데이터를 2차원으로 축소하였다.
 
-위 그림은 실제 Brain Tumor 데이터와 Brain Generator와 Tumour Generator를 통해 생성한 데이터를 PCA를 사용해 나타낸 산점도 그래프와 T-sne를 사용해 나타낸 산점도 그래프 그리고 PCA를 통해 50차원 축소 후 T-sne를 통해 2차원으로 축소한 산점도 그래프이다.
+위 그림은 실제 Brain Tumor 데이터와 Brain Generator와 Tumor Generator를 통해 생성한 데이터를 PCA를 사용해 나타낸 산점도 그래프와 T-sne를 사용해 나타낸 산점도 그래프 그리고 PCA를 통해 50차원 축소 후 T-sne를 통해 2차원으로 축소한 산점도 그래프이다.
 
 위 그래프에서 볼 수 있듯이 Tumor와 Brain은 경계가 확실하게 나뉘어져 있으며 서로 다른 데이터 성분으로 인식하고 있다. 반면, Fake Data와 Real Data는 잘 섞여 있는 것으로 보아 TG와 BG로 생성한 데이터가 실제 데이터와 유사함을 나타내고 있다.
 
