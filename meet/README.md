@@ -67,6 +67,7 @@
 - DCGAN 구조 기반 Tumor Generator 개발
 - Seg-DNN 최적화 완료
 
+
 ## 5월 21일
 - Tumor Generator 최적화 완료
 - Brain Generator 최적화 완료
@@ -77,10 +78,14 @@
 - Brain Generator를 이용한 Fake Brain 생성
 - Data Augmentation을 통한 Seg-DNN 성능 평가
 ![meet_0527](./image/meet_0527.jpg)
+
+
 ## 6월 3일 
 - 다이스 계수, TSNE, PCA 구현
 
 ## 6월 10일 
 - 최종 보고서  작성 완료
 
+## 6월 17일 
+- 최종 Github 정리
 
