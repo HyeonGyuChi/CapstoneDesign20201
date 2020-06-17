@@ -80,8 +80,8 @@ Coach
 
 - 각 모델학습에 사용한 데이터
 
-    |Model|학습데이터
-    |---|---|---|
+    |Model|학습데이터|
+    |---|---|
     |Tumour Generator | Label data(Brain Tumour) from Brats 2018 |
     |Brain Generator| Abnormal Brain data(Brain Tumour) from Brats 2018 |
     |Seg-DNN| Brain Tumour Data Pair from Brats 2018 |
@@ -113,8 +113,10 @@ Coach
 
 #### Network Structure
 
+<div display="inline-block">
 <center><img src="./image/modelB.jpg"></img></center>
 <center><img src="./image/unet.png"></img></center>
+</div>
 
 Seg-DNN은 U-Net구조를 참고하여 구현하였다.
 
@@ -131,12 +133,13 @@ The Contracting Path는 (3x3)크기로 convolutions을 두 차례씩 반복 하�
 #### Output
 - Real Brain(좌) vs Seg-DNN을 통해 검출한 뇌종양부분 (우)
 
-<center>
 <div display="inline-block">
+<center>
 <img src="./image/real_brain.gif" display="inline-block"></img>
 <img src="./image/fake_brain.gif" display="inline-block"></img>
-</div>
 </center>
+</div>
+
 
 ---
 
@@ -176,9 +179,11 @@ DCGAN의 Discriminator의 구조는 위 사진의 우측 부분과 같으며, Di
 
 #### Network Structure
 
-<div display="block" text-align="center">
+<div display="inline-block" text-align="center">
+<center>
 <p><img src="./image/modelA.jpg"></img></p>
 <p><img src="./image/pix2pix.png"></img></p>
+</center>
 </div>
 
 다음은 Brain Generator의 모델구조이다. Pix2Pix구조를 기반으로 Brain Generator를 구현하였다. 
@@ -188,6 +193,11 @@ Pix2Pix 는 Generator와 Discriminator로 이루어져 있으며 Generator 기�
 Pix2pix의 Discriminator 기본구조는 Patch-GAN구조이다. L1 Loss를 사용하고 참고 이미지와 비슷한 이미지를 만드는 것을 돕는다. 이것은 Low-Frequency에서 너무 다른 이미지가 생기는 것을 막아준다.
 
 즉, Discriminator는 High-Frequency에서 구분하는 것에 주 목적을 둔다. 이미지를 N X N 크기의 Patch로 나누고, 각각의 Patch에 대해서 참/거짓을 판별한 뒤, 참이 많으면 참으로, 거짓이 많으면 거짓으로 분류하는 방법이다. 더 지역적인 특징이 반영되므로, High-frequency에서 구분하는 데 적절하다. Patch Size가 작을수록, 전체 매개변수의 수가 작아지므로, 학습 속도가 빨라진다.
+
+#### Output
+-  Brain Generator를 이용한 Syntheric Abnromal Brain 데이터 생성 과정
+
+<center><img src="./image/pix2pix.gif" width="200" height="200" display="inline-block"></img></center>
 
 
 ## Result
@@ -201,7 +211,7 @@ Pix2pix의 Discriminator 기본구조는 Patch-GAN구조이다. L1 Loss를 사�
 총 세 가지 경우를 비교해 봤을 때 Brain Generator를 사용해 만든 Fake data 가 학습에 있어 가장 효과적이였다.
 
 #### Tumour Generator)와 Brain Generator를 통해 생성한 Fake Data와 진짜 데이터 비교
-<center><img src="./image/result1.png" height="400px"></img></center>
+<center><img src="./image/result1.png" height="500px"></img></center>
 
 TG(Tumour Generator)와 BG(Brain Generator)를 통해 생성한 데이터들이 실제 데이터와 차이가 없음을 확인하기 위해 PCA와 T-sne 분석 방법을 사용했다.   
 
