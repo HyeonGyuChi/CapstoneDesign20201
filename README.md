@@ -130,7 +130,13 @@ The Contracting Path는 (3x3)크기로 convolutions을 두 차례씩 반복 하�
 
 #### Output
 - Real Brain(좌) vs Seg-DNN을 통해 검출한 뇌종양부분 (우)
-<center> <img src="./image/real_brain.gif" display="inline-block"></img> <img src="./image/fake_brain.gif" display="inline-block"></img> </center>
+
+<center>
+<div display="inline-block">
+<img src="./image/real_brain.gif" display="inline-block"></img>
+<img src="./image/fake_brain.gif" display="inline-block"></img>
+</div>
+</center>
 
 ---
 
@@ -160,7 +166,8 @@ DCGAN의 Discriminator의 구조는 위 사진의 우측 부분과 같으며, Di
 #### Output
 -  Tumour Generator를 이용한 Syntheric 뇌종양 라벨 데이터 생성 과정
 
-![dcgan](./image/dcgan.gif){: width="200" height="200"}
+<center><img src="./image/dcgan.gif" width="200" height="200" display="inline-block"></img></center>
+
 -----
 
 ### Brain-Generator
@@ -213,7 +220,7 @@ PCA와 t-sne는 모두 데이터 차원을 축소하여 주성분을 분석하�
 
 - 사용한 데이터에 따른 Seg-DNN 모델학습 Loss
 
-    <center><img src="./image/result_loss.png"></img></center>
+    <center><img src="./image/result_loss.png" height="200px"></img></center>
 
     학습 데이터의 대한 변화만을 확인하기 위해 학습 횟수와 오차 함수, 학습률, 최적화 알고리즘, 배치사이즈 등 Hyper Parameters는 모두 동일하게 진행하였다. 다음 도표는 세 가지 경우에 대한 Validation Loss를 측정한 것으로, Gan을 통해 생성한 Fake Data를 함께 학습 시켰을 때 Loss가 가장 많이 줄어든 것을 확인 할 수 있다. 
 
@@ -234,11 +241,10 @@ PCA와 t-sne는 모두 데이터 차원을 축소하여 주성분을 분석하�
     다이스 계수는 IOU(Intersection of Union)으로 전체 영역중의 겹친 부분을 수치화한 평가 척도다. 기존 데이터만을 사용한 학습모델의 다이스계수는 58.9%, 기존 데이터에 기하학적 변환을 이용해 데이터를 추가한 모델은 60.45%, Fake Data가 추가하여 학습한 모델은 63.233% 이었다.
 
 
-    <center>다이스 계수(IOU)
-
-    <img src="./image/dice.png"></img>
     
-    </center>
+    - 다이스 계수(IOU)
+
+        <img src="./image/dice.png"></img>
     
 최종적으로 학습을 진행 할 때 오차가 감소하는 속도와 수치, 최종 U-Net 모델의 성능을 평가한 다이스계수를 종합적으로 비교해본 결과 TG와 BG를 통해 생성한 Fake data가 기존 Data Augmentation에 비해 효과적임을 알 수 있다.
 
