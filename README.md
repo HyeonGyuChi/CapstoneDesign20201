@@ -4,10 +4,9 @@
 -----
 
 ## Directory
-- ./Data : Data 전처리
-- ./Brain Generator : Synthetic Data를 생성하는 모델
-- ./Model_B : Synthetic Data의 가치를 평가하는 모델
-- ./imges : Image for README
+- ./DataPerpare : Data 전처리
+- ./Model : 프로젝트에서 구현한 모델
+- ./imges : Image assets for README
 - <a href="./meet">./meet : 주차별 회의록</a>
 
 ## Contents
@@ -80,7 +79,6 @@ Coach
 ### Data
 
 - 각 모델학습에 사용한 데이터
-    <center>
 
     |Model|학습데이터
     |---|---|---|
@@ -88,7 +86,6 @@ Coach
     |Brain Generator| Abnormal Brain data(Brain Tumour) from Brats 2018 |
     |Seg-DNN| Brain Tumour Data Pair from Brats 2018 |
 
-    </center>
 
 - 학습된 모델의 입력 및 출력 데이터
 
@@ -99,7 +96,7 @@ Coach
     |Seg-DNN| Brain MRI Data | Segmentation Data(Brain Tumour) |
 
 
-- 뇌종양 데이터 - Brats2018 매년 개최되는 
+- <a href='https://www.med.upenn.edu/sbia/brats2018/data.html'>Brats2018</a> - Multimodal Brain Tumor Segmentation Challenge 2018
 
     ![brats2018](./image/brats.PNG)
 
@@ -133,10 +130,7 @@ The Contracting Path는 (3x3)크기로 convolutions을 두 차례씩 반복 하�
 
 #### Output
 - Real Brain(좌) vs Seg-DNN을 통해 검출한 뇌종양부분 (우)
-<center>
-<img src="./image/real_brain.gif" display="inline-block"></img>
-<img src="./image/fake_brain.gif" display="inline-block"></img>
-</center>
+<center> <img src="./image/real_brain.gif" display="inline-block"></img> <img src="./image/fake_brain.gif" display="inline-block"></img> </center>
 
 ---
 
@@ -166,8 +160,7 @@ DCGAN의 Discriminator의 구조는 위 사진의 우측 부분과 같으며, Di
 #### Output
 -  Tumour Generator를 이용한 Syntheric 뇌종양 라벨 데이터 생성 과정
 
-<center><img src="./image/dcgan.gif"></img></center>
-
+![dcgan](./image/dcgan.gif){: width="200" height="200"}
 -----
 
 ### Brain-Generator
