@@ -176,9 +176,10 @@ DCGAN의 Discriminator의 구조는 위 사진의 우측 부분과 같으며, Di
 
 #### Network Structure
 
-
-<center><img src="./image/modelA.jpg"></img></center>
-<center><img src="./image/pix2pix.png"></img></center>
+<div display="block" text-align="center">
+<p><img src="./image/modelA.jpg"></img></p>
+<p><img src="./image/pix2pix.png"></img></p>
+</div>
 
 다음은 Brain Generator의 모델구조이다. Pix2Pix구조를 기반으로 Brain Generator를 구현하였다. 
 
@@ -200,7 +201,7 @@ Pix2pix의 Discriminator 기본구조는 Patch-GAN구조이다. L1 Loss를 사�
 총 세 가지 경우를 비교해 봤을 때 Brain Generator를 사용해 만든 Fake data 가 학습에 있어 가장 효과적이였다.
 
 #### Tumour Generator)와 Brain Generator를 통해 생성한 Fake Data와 진짜 데이터 비교
-<center><img src="./image/result1.png"></img></center>
+<center><img src="./image/result1.png" height="400px"></img></center>
 
 TG(Tumour Generator)와 BG(Brain Generator)를 통해 생성한 데이터들이 실제 데이터와 차이가 없음을 확인하기 위해 PCA와 T-sne 분석 방법을 사용했다.   
 
